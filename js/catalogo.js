@@ -17,11 +17,11 @@ $(document).ready(function() {
                     '<a href="#" class="pull-left">' +
                     '<img src="https://s3.amazonaws.com/uifaces/faces/twitter/fffabs/128.jpg" class="media-photo">' +
                     '</a>' +
-                    '<div class="media-body">' +
-                    '<span class="media-meta pull-right">' + elem.ano + '</span>' +
+                    '<div class="media-body">' +                    
                     '<h4 class="title">'
-                    + elem.nome +
-                    '<span class="pull-right pagado">(' + elem.categoria + ')</span>' +
+                    + elem.nome +                    
+                    '<span class="pull-right"> (' + elem.categoria + ') </span>' +
+                    '<span class="media-meta pull-right">' + elem.ano + '</span> ' +
                     '</h4>' +
                     '<p class="summary">' + elem.sinopse + '</p>' +
                     '</div>' +
