@@ -32,7 +32,7 @@ and open the template in the editor.
                 <div id="navbar" class="collapse navbar-collapse">
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="#">Catálogo</a></li>
-                        <li><a href="#about">Cadastro de Filmes</a></li>
+                        <li><a href="cadastro.php">Cadastro de Filmes</a></li>
                         <li><a href="#contact">Locação</a></li>
                         <li><a href="#contact">Clientes</a></li>
                     </ul>

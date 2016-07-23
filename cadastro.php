@@ -44,33 +44,39 @@ and open the template in the editor.
         </nav>
         <div class="container">
             <div class="row">
-                <form class="form-horizontal" action="model/cadastro.php" method="post">
+ 
+                <form class="form-horizontal" id="form-cadastro">
                     <fieldset>
 
                         <!-- Form Name -->
                         <legend>Cadastro de Filme</legend>
 
-                        <!-- Text input-->
-                        <div class="form-group">
-                            <label class="col-md-4 control-label" for="nome">Título do Filme</label>  
-                            <div class="col-md-4">
-                                <input id="nome" name="nome" type="text" placeholder="Título do Filme" class="form-control input-md" required="">
+                        <div class="row" id="alertas">
 
+                        </div>
+                        <!-- Text input-->
+                        <div class="form-group has-feedback">
+                            <label class="col-md-4 control-label" for="nome"> 
+                               Título do Filme</label>
+                            <div class="col-md-4">
+                                <input id="nome" name="nome" type="text" placeholder="Título do Filme" class="form-control input-md" >
+                 
                             </div>
+                            
                         </div>
 
                         <!-- Select Basic -->
-                        <div class="form-group">
+                        <div class="form-group has-feedback">
                             <label class="col-md-4 control-label" for="ano">Ano Lançamento</label>
                             <div class="col-md-4">
                                 <select id="ano" name="ano" class="form-control">
-                     
+                                        <option value="" selected>Selecione</option>
                                 </select>
                             </div>
                         </div>
 
                         <!-- Textarea -->
-                        <div class="form-group">
+                        <div class="form-group has-feedback">
                             <label class="col-md-4 control-label" for="sinopse">Sinopse</label>
                             <div class="col-md-4">                     
                                 <textarea class="form-control" id="sinopse" name="sinopse"></textarea>
@@ -78,7 +84,7 @@ and open the template in the editor.
                         </div>
 
                         <!-- Multiple Radios -->
-                        <div class="form-group">
+                        <div class="form-group has-feedback">
                             <label class="col-md-4 control-label" for="tipo">Tipo</label>
                             <div class="col-md-4">
                                 <div class="radio">
@@ -97,7 +103,7 @@ and open the template in the editor.
                         </div>
 
                         <!-- Multiple Radios -->
-                        <div class="form-group">
+                        <div class="form-group has-feedback">
                             <label class="col-md-4 control-label" for="midia">Midia</label>
                             <div class="col-md-4">
                                 <div class="radio">
@@ -122,19 +128,20 @@ and open the template in the editor.
                         </div>
 
                         <!-- Text input-->
-                        <div class="form-group">
+                        <div class="form-group has-feedback">
                             <label class="col-md-4 control-label" for="disponivel">Quantidade disponível</label>  
                             <div class="col-md-4">
-                                <input id="disponivel" name="disponivel" type="text" placeholder="Informe a quantidade" class="form-control input-md" required="">
+                                <input id="disponivel" name="disponivel" type="text" placeholder="Informe a quantidade" class="form-control input-md">
 
                             </div>
                         </div>
 
                         <!-- Select Multiple -->
-                        <div class="form-group">
+                        <div class="form-group has-feedback">
                             <label class="col-md-4 control-label" for="categoria">Categoria</label>
                             <div class="col-md-4">
                                 <select id="categoria" name="categoria" class="form-control" multiple="multiple">
+                                    <option value="" selected>Selecione</option>
                                     <option value="Ação">Ação</option>
                                     <option value="Aventura">Aventura</option>
                                     <option value="Comédia">Comédia</option>
