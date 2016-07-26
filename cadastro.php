@@ -8,46 +8,23 @@ and open the template in the editor.
     <head>
         <meta charset="UTF-8">
         <title>Cadatro Filmes</title>
-        <link rel="stylesheet" href="css/bootstrap.css" />
-        <link rel="stylesheet" href="css/bootstrap-theme.css" />
-        <link rel="stylesheet" href="css/principal.css" />
-        <script type="text/javascript" src="js/jquery-2.2.4.min.js"></script>
-        <script type="text/javascript" src="js/bootstrap.min.js"></script>
-        <script type="text/javascript" src="js/cadastro.js"></script>
+        <link rel="stylesheet" href="/css/bootstrap.css" />
+        <link rel="stylesheet" href="/css/bootstrap-theme.css" />
+        <link rel="stylesheet" href="/css/principal.css" />
+        <script type="text/javascript" src="/js/jquery-2.2.4.min.js"></script>
+        <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="/js/cadastro.js"></script>
     </head>
     <body>
 
     <main>
-        <nav class="navbar navbar-inverse navbar-static-top">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="#">Locadora</a>
-                </div>
-                <div id="navbar" class="collapse navbar-collapse">
-                    <ul class="nav navbar-nav">
-                        <li><a href="index.php">Catálogo</a></li>
-                        <li class="active"><a href="cadastro.php">Cadastro de Filmes</a></li>
-                        <li><a href="#contact">Locação</a></li>
-                        <li><a href="#contact">Clientes</a></li>
-                    </ul>
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#contact">Logout</a></li>
-                    </ul>   
-                </div><!--/.nav-collapse -->
-            </div>
-        </nav>
+        <?php include_once 'menu.php'?>
         <div class="container">
             <div class="row">
  
                 <form class="form-horizontal" id="form-cadastro">
                     <fieldset>
-
+                        <input type="hidden" name="id" id="id" />
                         <!-- Form Name -->
                         <legend>Cadastro de Filme</legend>
 
@@ -140,7 +117,7 @@ and open the template in the editor.
                         <div class="form-group has-feedback">
                             <label class="col-md-4 control-label" for="categoria">Categoria</label>
                             <div class="col-md-4">
-                                <select id="categoria" name="categoria" class="form-control" multiple="multiple">
+                                <select id="categoria" name="categoria[]" class="form-control" multiple="multiple">
                                     <option value="" selected>Selecione</option>
                                     <option value="Ação">Ação</option>
                                     <option value="Aventura">Aventura</option>

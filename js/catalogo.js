@@ -18,8 +18,8 @@ $(document).ready(function() {
                     '<img src="https://s3.amazonaws.com/uifaces/faces/twitter/fffabs/128.jpg" class="media-photo">' +
                     '</a>' +
                     '<div class="media-body">' +                    
-                    '<h4 class="title">'
-                    + elem.nome +                    
+                    '<h4 class="title">'+
+                    '<a href="/cadastro.php?id='+elem.id+'">'+ elem.nome +'</a>'  +                  
                     '<span class="pull-right"> (' + elem.categoria + ') </span>' +
                     '<span class="media-meta pull-right">' + elem.ano + '</span> ' +
                     '</h4>' +

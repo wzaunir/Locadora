@@ -13,27 +13,58 @@ $(document).ready(function() {
         }
     }
 
+    id = getId();
+    if (id != null) {
+        $.getJSON('/model/cadastro.php', {id: id})
+        .done(
+        function(retorno) {
+             $("#id").val(retorno.id);
+            $("#ano").val(retorno.ano);
+            $("#nome").val(retorno.nome);
+            $("#sinopse").val(retorno.sinopse);
+            $("#disponivel").val(retorno.disponivel);
+            var cat = retorno.categoria.split(',');
+            $("[name=tipo]").each(function(i, elem) {
+                if ($(elem).val() == retorno.tipo) {
+                    $(elem).prop('checked', true);
+                }
+            });
+            $("[name=midia]").each(function(i, elem) {
+                if ($(elem).val() == retorno.midia) {
+                    $(elem).prop('checked', true);
+                }
+            });
+            $("#categoria").val(cat);
+            $("#cadastrar").html('Alterar');
+        });
+                
+    }
+
     $("#form-cadastro").submit(function(event) {
         event.preventDefault();
         var dados = $(this).serialize();
 
-
         validaForm(this);
-        return;
 
         $.post("model/cadastro.php", dados).done(function(retorno) {
 
-            $("#alertas").empty(); //remove o conteudo do HTML
-
+            if($('#id').val() == '' ){
+                $("#alertas").empty(); //remove o conteudo do HTML
+                var msg = 'adicionado';
+            }else{
+                var msg = 'alterado';
+            }
 
             var retorno = JSON.parse(retorno);
             /*trata o retorno do ajax*/
             if (retorno.status == 'ok') {
                 var alerta = $('<div class="col-md-8 col-md-offset-2 alert alert-success alert-dismissible" role="alert">' +
                         '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>' +
-                        '<i class="glyphicon glyphicon-thumbs-up" ></i><strong> Sucesso!</strong> O filme foi adicionado corretamente.' +
+                        '<i class="glyphicon glyphicon-thumbs-up" ></i><strong> Sucesso!</strong> O filme foi '+msg+' corretamente.' +
                         '</div>');
-                $('input,textaera,select').val('');
+                if(msg === 'adicionado'){
+                    $('input,textaera,select').val('');
+                }
             } else {
                 var alerta = $('<div class="col-md-8 col-md-offset-2 alert alert-danger alert-dismissible" role="alert">' +
                         '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>' +
@@ -48,32 +79,52 @@ $(document).ready(function() {
 
     }); //Fim Submit
 
+    $('#disponivel').keydown(function(event) {
 
+        if ((event.keyCode >= 48 && event.keyCode <= 59) || (event.keyCode >= 96 && event.keyCode <= 105) || (event.keyCode >= 35 && event.keyCode <= 40) || event.keyCode == 20) {
+            return true;
+        } else {
+            return false;
+        }
+
+    });
 
 });
+
+
+
 function validaForm(form) {
 
-    $(form).find('.form-group').removeClass('has-error');
-    $(form).find('span.glyphicon-remove').remove('span');
     var valido = true;
-    
+
     $(form).find('input,select,textarea').each(function(idx, elem) {
+
+        $(elem).parent().parent().removeClass('has-error');
         if ($(elem).val() == '') {
 
             $(elem).parent().parent().addClass('has-error');
             valido = false;
         }
 
-       if($(elem).attr('type') == 'text'){
-           
-           $(elem).after('<span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>                                <span class="sr-only">(success)</span>');
-           
-       }
-        
+        if ($(elem).attr('type') == 'text') {
+
+            $(elem).after('<span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>                                <span class="sr-only">(success)</span>');
+
+        }
+
     })
 
-return valido;
+    return valido;
 
+
+
+}
+function getId() {
+
+
+    var uri = window.location.search;
+    var dado = uri.split("=");
+    return dado[1];
 
 
 }
