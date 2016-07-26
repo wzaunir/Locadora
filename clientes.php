@@ -7,13 +7,16 @@ and open the template in the editor.
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Cadatro Filmes</title>
+        <title>Cadastro Clientes</title>
         <link rel="stylesheet" href="/css/bootstrap.css" />
         <link rel="stylesheet" href="/css/bootstrap-theme.css" />
         <link rel="stylesheet" href="/css/principal.css" />
         <script type="text/javascript" src="/js/jquery-2.2.4.min.js"></script>
         <script type="text/javascript" src="/js/bootstrap.min.js"></script>
-        <script type="text/javascript" src="/js/cadastro.js"></script>
+        <script type="text/javascript" src="/js/bootstrap-datepicker.min.js"></script>  
+        <script type="text/javascript" src="/locales/bootstrap-datepicker.pt-BR.min.js"></script>  
+        
+        <script type="text/javascript" src="/js/clientes.js"></script>
     </head>
     <body>
 
