@@ -18,11 +18,11 @@ and open the template in the editor.
     <body>
 
     <main>
-        <?php include_once 'menu.php'?>
+        <?php include_once 'menu.php' ?>
         <div class="container">
             <div class="row">
- 
-                <form class="form-horizontal" id="form-cadastro">
+
+                <form class="form-horizontal" id="form-cadastro" enctype="">
                     <fieldset>
                         <input type="hidden" name="id" id="id" />
                         <!-- Form Name -->
@@ -34,12 +34,12 @@ and open the template in the editor.
                         <!-- Text input-->
                         <div class="form-group has-feedback">
                             <label class="col-md-4 control-label" for="nome"> 
-                               Título do Filme</label>
+                                Título do Filme</label>
                             <div class="col-md-4">
                                 <input id="nome" name="nome" type="text" placeholder="Título do Filme" class="form-control input-md" >
-                 
+
                             </div>
-                            
+
                         </div>
 
                         <!-- Select Basic -->
@@ -47,7 +47,7 @@ and open the template in the editor.
                             <label class="col-md-4 control-label" for="ano">Ano Lançamento</label>
                             <div class="col-md-4">
                                 <select id="ano" name="ano" class="form-control">
-                                        <option value="" selected>Selecione</option>
+                                    <option value="" selected>Selecione</option>
                                 </select>
                             </div>
                         </div>
@@ -128,7 +128,13 @@ and open the template in the editor.
                                 </select>
                             </div>
                         </div>
-
+                        <!-- File Button --> 
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="capa-filme">Capa Filme</label>
+                            <div class="col-md-4">
+                                <input id="capa-filme" name="capa-filme" class="input-file" type="file">
+                            </div>
+                        </div>
                         <!-- Button -->
                         <div class="form-group">
                             <label class="col-md-4 control-label" for="cadastrar"></label>

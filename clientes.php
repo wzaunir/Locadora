@@ -23,10 +23,12 @@
             <div class="row">
                 <form class="form-horizontal" id="form-cliente">
                     <fieldset>
-
+                         <input type="hidden" name="id" id="id" />
                         <!-- Form Name -->
                         <legend>Cadastro</legend>
+                        <div class="row" id="alertas">
 
+                        </div>
                         <!-- Text input-->
                         <div class="form-group has-feedback">
                             <label class="col-md-4 control-label" for="nome">Nome</label>  

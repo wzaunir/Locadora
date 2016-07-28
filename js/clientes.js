@@ -87,7 +87,7 @@ id = getId();
                         '</div>');
 
             }
-            $('#form-cadastro div.form-group:first').focus();
+            $('#form-cliente div.form-group:first').focus();
             $("#alertas").append(alerta);
         }); //
 

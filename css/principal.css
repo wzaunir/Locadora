@@ -1,10 +1,13 @@
-/*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
-/* 
-    Created on : 20/07/2016, 20:57:08
-    Author     : aluno
-*/
-
+.star-lancamento{
+    color: #eb9316;
+    text-shadow: 2px 2px 2px #000;
+    font-size: 20px;
+    
+    
+}
+.star-catalogo{
+     color: #999;
+    text-shadow: 0 0 4px;
+    font-size: 20px;
+    
+}

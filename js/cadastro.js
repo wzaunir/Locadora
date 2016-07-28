@@ -97,7 +97,7 @@ function validaForm(form) {
 
     var valido = true;
 
-    $(form).find('input,select,textarea').each(function(idx, elem) {
+    $(form).find('input[type="text"],select,textarea').each(function(idx, elem) {
 
         $(elem).parent().parent().removeClass('has-error');
         if ($(elem).val() == '') {

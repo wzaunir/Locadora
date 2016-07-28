@@ -22,13 +22,13 @@ if ($_SERVER["REQUEST_METHOD"] == 'POST') {
                 . "'" . $form_data . "')";
     }
 
-    /*if ($dbcon->exec($sql) === false) {
+    if ($dbcon->exec($sql) === false) {
 
         echo '{"status":"erro"}';
-    } else {*/
+    } else {
 
         echo '{"status":"ok"}';
-   // }
+    }
 } elseif ($_SERVER["REQUEST_METHOD"] == 'GET') {
 
     $sql = "SELECT * FROM catalogo where id = '" . $_GET['id'] . "'";
