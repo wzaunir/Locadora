@@ -16,42 +16,40 @@ $(document).ready(function() {
     id = getId();
     if (id != null) {
         $.getJSON('/model/cadastro.php', {id: id})
-        .done(
-        function(retorno) {
-             $("#id").val(retorno.id);
-            $("#ano").val(retorno.ano);
-            $("#nome").val(retorno.nome);
-            $("#sinopse").val(retorno.sinopse);
-            $("#disponivel").val(retorno.disponivel);
-            var cat = retorno.categoria.split(',');
-            $("[name=tipo]").each(function(i, elem) {
-                if ($(elem).val() == retorno.tipo) {
-                    $(elem).prop('checked', true);
-                }
-            });
-            $("[name=midia]").each(function(i, elem) {
-                if ($(elem).val() == retorno.midia) {
-                    $(elem).prop('checked', true);
-                }
-            });
-            $("#categoria").val(cat);
-            $("#cadastrar").html('Alterar');
-        });
-                
+                .done(
+                        function(retorno) {
+                            $("#id").val(retorno.id);
+                            $("#ano").val(retorno.ano);
+                            $("#nome").val(retorno.nome);
+                            $("#sinopse").val(retorno.sinopse);
+                            $("#disponivel").val(retorno.disponivel);
+                            var cat = retorno.categoria.split(',');
+                            $("[name=tipo]").each(function(i, elem) {
+                                if ($(elem).val() == retorno.tipo) {
+                                    $(elem).prop('checked', true);
+                                }
+                            });
+                            $("[name=midia]").each(function(i, elem) {
+                                if ($(elem).val() == retorno.midia) {
+                                    $(elem).prop('checked', true);
+                                }
+                            });
+                            $("#categoria").val(cat);
+                            $("#cadastrar").html('Alterar');
+                        });
+
     }
 
     $("#form-cadastro").submit(function(event) {
         event.preventDefault();
         var dados = $(this).serialize();
 
-        validaForm(this);
-
         $.post("model/cadastro.php", dados).done(function(retorno) {
 
-            if($('#id').val() == '' ){
+            if ($('#id').val() == '') {
                 $("#alertas").empty(); //remove o conteudo do HTML
                 var msg = 'adicionado';
-            }else{
+            } else {
                 var msg = 'alterado';
             }
 
@@ -60,9 +58,9 @@ $(document).ready(function() {
             if (retorno.status == 'ok') {
                 var alerta = $('<div class="col-md-8 col-md-offset-2 alert alert-success alert-dismissible" role="alert">' +
                         '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>' +
-                        '<i class="glyphicon glyphicon-thumbs-up" ></i><strong> Sucesso!</strong> O filme foi '+msg+' corretamente.' +
+                        '<i class="glyphicon glyphicon-thumbs-up" ></i><strong> Sucesso!</strong> O filme foi ' + msg + ' corretamente.' +
                         '</div>');
-                if(msg === 'adicionado'){
+                if (msg === 'adicionado') {
                     $('input,textaera,select').val('');
                 }
             } else {
@@ -89,7 +87,31 @@ $(document).ready(function() {
 
     });
 
+     $("#capa").change(function() {
+         
+        var file = this.files[0];
+        
+        var filename = file.name.split('.');
+        
+        $('#img-txt').val(filename[filename.length - 1]);
+        var img = $('#img-capa');
+
+        var reader = new FileReader();
+        
+        reader.onload = (function(aImg) { 
+           
+            return function(e) { 
+                imgsrc = e.target.result;
+                $('#img-src').val(imgsrc);
+                aImg.attr('src',imgsrc); }; })(img);
+        
+        reader.readAsDataURL(file);
+    }); 
+
+
 });
+
+
 
 
 

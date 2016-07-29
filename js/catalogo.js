@@ -60,7 +60,7 @@ function getCatalogo() {
                     '<td>' +
                     '<div class="media">' +
                     '<a href="#" class="pull-left">' +
-                    '<img src="https://s3.amazonaws.com/uifaces/faces/twitter/fffabs/128.jpg" class="media-photo">' +
+                    '<img src="img/'+elem.imagem+'" class="media-photo img-thumbnail" width=150>' +
                     '</a>' +
                     '<div class="media-body">' +
                     '<h4 class="title">' +

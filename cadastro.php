@@ -9,10 +9,12 @@ and open the template in the editor.
         <meta charset="UTF-8">
         <title>Cadatro Filmes</title>
         <link rel="stylesheet" href="/css/bootstrap.css" />
+        
         <link rel="stylesheet" href="/css/bootstrap-theme.css" />
         <link rel="stylesheet" href="/css/principal.css" />
         <script type="text/javascript" src="/js/jquery-2.2.4.min.js"></script>
         <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+
         <script type="text/javascript" src="/js/cadastro.js"></script>
     </head>
     <body>
@@ -22,7 +24,7 @@ and open the template in the editor.
         <div class="container">
             <div class="row">
 
-                <form class="form-horizontal" id="form-cadastro" enctype="">
+                <form class="form-horizontal" id="form-cadastro" enctype="multipart/form-data">
                     <fieldset>
                         <input type="hidden" name="id" id="id" />
                         <!-- Form Name -->
@@ -129,12 +131,18 @@ and open the template in the editor.
                             </div>
                         </div>
                         <!-- File Button --> 
-                        <div class="form-group">
+                        <div class="form-group">                            
+                           
                             <label class="col-md-4 control-label" for="capa-filme">Capa Filme</label>
                             <div class="col-md-4">
-                                <input id="capa-filme" name="capa-filme" class="input-file" type="file">
+                                
+                                <input id="capa" name="capa" class="input-file" type="file" > 
+                                <input type="hidden" id="img-src" name="img-src" />
+                                <input type="hidden" id="img-txt" name="img-txt" />
+                                <br><img  id="img-capa" src="" class="img-responsive " />
                             </div>
                         </div>
+
                         <!-- Button -->
                         <div class="form-group">
                             <label class="col-md-4 control-label" for="cadastrar"></label>
@@ -145,7 +153,6 @@ and open the template in the editor.
 
                     </fieldset>
                 </form>
-
 
             </div>
             <div class="content-footer">
