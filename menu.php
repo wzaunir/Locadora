@@ -17,7 +17,7 @@
                 <li><a href="clientes.php">Clientes</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="#contact">Logout</a></li>
+                <li><a href="#contact" id="nomeusuario"></a></li>
             </ul>   
         </div><!--/.nav-collapse -->
     </div>

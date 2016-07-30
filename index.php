@@ -1,4 +1,5 @@
 <?php
+
 if(!isset($_COOKIE['locadora'])){
     
     header("location:/login.php");
@@ -18,6 +19,7 @@ if(!isset($_COOKIE['locadora'])){
         <script type="text/javascript" src="js/jquery-2.2.4.min.js"></script>
         <script type="text/javascript" src="js/bootstrap.min.js"></script>
         <script type="text/javascript" src="js/catalogo.js"></script>
+         <script type="text/javascript" src="js/principal.js"></script>
     </head>
     <body>
 
