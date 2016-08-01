@@ -12,17 +12,17 @@ if ($_SERVER["REQUEST_METHOD"] == 'POST') {
     
     $usuario = $prepare->fetch(PDO::FETCH_ASSOC);
 
-    
+  
     if ($usuario != false) {
         
-        $time = ($_POST['remember'] == 1)? mktime() + (7 * 24 * 60 * 60) : 0;
+        $time = (isset($_POST['remember']) )? mktime() + (7 * 24 * 60 * 60) : 0;
         
         setcookie('locadora', json_encode($usuario), $time ,'/');
-        header('Location: ../index.php');
+       echo '{"status":"ok"}';
     
     }else{
-        echo "Usuário ou senha inválidos";
-        header('Location: ../login.php');
+        echo '{"msg":"Usuário ou senha incorretos!","status":"erro"}';
+       
     } 
 
    

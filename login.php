@@ -1,9 +1,5 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
+
 <html>
     <head>
         <meta charset="UTF-8">
@@ -13,10 +9,9 @@ and open the template in the editor.
         <link rel="stylesheet" href="css/principal.css" />
         <script type="text/javascript" src="js/jquery-2.2.4.min.js"></script>
         <script type="text/javascript" src="js/bootstrap.min.js"></script>
-        <script type="text/javascript" src="js/catalogo.js"></script>
+        <script type="text/javascript" src="js/login.js"></script>
     </head>
     <body>
-
     <main>
         <div class="container" style="margin-top:30px">
             <div class="col-md-4 col-md-offset-4">
@@ -26,9 +21,9 @@ and open the template in the editor.
                     </div>
 
                     <div class="panel-body">
-                        <form role="form" action="/model/login.php" method="post">
-                            <div class="alert alert-danger">
-                                <a class="close" data-dismiss="alert" href="#">×</a>Usuário ou senha incorretos!
+                        <form role="form" action="/model/login.php" method="post" id="form-login">
+                            <div class="alert alert-danger " id="alert-erro" style="display:none">
+                                Usuário ou senha incorretos!
                             </div>
                             <div style="margin-bottom: 12px" class="input-group">
                                 <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
